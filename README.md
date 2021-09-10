@@ -1,0 +1,1 @@
+# TechnicalSchoolApp
