@@ -56,9 +56,9 @@ public class TechnicalSchool {
 	}
 /**
  * Returns certified based on if the student's transcript has met all conditions.
- * @param certify_one,two,three		Holds the threshold numbers for certify to verify
+ * @param certify_one,certify_two,certify_three		Holds the threshold numbers for certify to verify
  * @param c1,c2,c3 					Keeps track of how many modules at corresponding level have passed
- * @param taught,self_study,project Keeps track of module types that have passed
+ * @param taught,self_study,project 			Keeps track of module types that have passed
  * @param student					the student class which holds the transcript to be analysed
  * @return certify 					If conditionals are met then certify will return as true
  * @author 15904358
@@ -72,9 +72,9 @@ public class TechnicalSchool {
 		int self_study = 0;
 		int project = 0;
 	
-		for(int i = 0;i < student.getNResults();i++) {									//for loop to go through student transcript
-			temp_module[i] = lookup(student.getTranscript()[i].getModule().toString());//calls look up method to match transcript code to offering code, place inside temp
-			for(int j = 0;j < student.getNResults();j++) {								//for loop to compare the individual transcript modules to conditions
+		for(int i = 0;i < student.getNResults();i++) {						//for loop to go through student transcript
+			temp_module[i] = lookup(student.getTranscript()[i].getModule().toString());	//calls look up method to match transcript code to offering code, place inside temp
+			for(int j = 0;j < student.getNResults();j++) {					//for loop to compare the individual transcript modules to conditions
 					if(temp_module[i].getLevel().compareTo(Level.ONE) == 0 && student.getTranscript()[i].getGrade().isPass() == true) {
 						c1++;
 						break;
